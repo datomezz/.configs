@@ -9,7 +9,7 @@ set ignorecase
 set smartcase
 set mouse=a
 set noerrorbells
-set encoding=utf-8
+set encoding=UTF-8
 set noswapfile
 set nowrap
 set background=dark
@@ -18,14 +18,13 @@ set nocompatible
 "PLUGINS"
 call plug#begin()
 
-Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
-let g:deoplete#enable_at_startup = 1
-
 Plug 'scrooloose/syntastic'
 Plug 'vim-airline/vim-airline'
 Plug 'scrooloose/nerdcommenter'
 Plug 'chun-yang/auto-pairs'
-Plug 'sheerun/vim-polyglot'
+Plug 'xuyuanp/nerdtree-git-plugin'
+Plug 'dense-analysis/ale'
+Plug 'joshdick/onedark.vim'
 
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 let g:coc_global_extensions = ['coc-json', 'coc-git', 'coc-tsserver', 'coc-snippets', 'coc-pairs', 'coc-eslint', 'coc-prettier']
@@ -191,7 +190,6 @@ nnoremap <silent><nowait> <space>k  :<C-u>CocPrev<CR>
 " Resume latest coc list.
 nnoremap <silent><nowait> <space>p  :<C-u>CocListResume<CR>
 
-
 Plug 'thinca/vim-fontzoom'
 Plug 'pangloss/vim-javascript'
 Plug 'mxw/vim-jsx'
@@ -207,3 +205,7 @@ map <C-b> :NERDTreeToggle<CR>
 map <m-o> :FontZoom!<CR>
 map <C--> <Plug>(fontzoom-smaller)
 map <C-+> <Plug>(fontzoom-larger)
+vmap ++ <Plug>NERDCommenterToggle
+nmap ++ <Plug>NERDCommenterToggle
+
+colorscheme onedark
